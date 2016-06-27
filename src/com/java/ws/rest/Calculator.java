@@ -12,21 +12,17 @@ public class Calculator {
 	@GET
 	@Path("pow/{number}/{power}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String power(@PathParam("number")int number,@PathParam("power")int power){
-		return number+" raised to the power "+power+" is "+Math.pow(number, power);
-	}	
+	public String power(@PathParam("number") int number, @PathParam("power") int power) {
+		return number + " raised to the power " + power + " is " + Math.pow(number, power);
+	}
 
 	@GET
 	@Path("sqrt/{number}")
 	@Produces(MediaType.APPLICATION_XML)
-	public String squareRoot(@PathParam("number")int number){
-		String xmlFormat="<calculator>"
-				+"<input-number>"+number+"</input-number>"
-				+"<square-root>"+(Math.sqrt(number))+"</square-root>"
-				+"</calculator>";
+	public String squareRoot(@PathParam("number") int number) {
+		String xmlFormat = "\n<calculator>\n" + "<input-number>" + number + "</input-number>\n" + "<square-root>"
+				+ (Math.sqrt(number)) + "</square-root>\n" + "</calculator>";
 		return xmlFormat;
 	}
-
-
 
 }
